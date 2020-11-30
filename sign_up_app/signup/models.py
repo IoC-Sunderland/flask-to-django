@@ -6,11 +6,16 @@ class Users(models.Model):
     email = models.EmailField(max_length=254, unique=True, null=False)
     password = models.CharField(max_length=128)
 
-    # Define __repr__ that will be called when querying e.g. 'Users.query.all()'
-    def __repr__(self):
-        obj_repr = f'ID: {self.id},' \
-                   f'Username: {self.username},' \
-                   f'Email: {self.email},' \
-                   f'Password: {self.password}' \
+    # Metadat about the class - in this case User class would be pluralised
+    # to Userss in Django admin
+    class Meta:
+        verbose_name_plural = "Users"
 
-        return obj_repr
+    # Define __str__ that will be called when querying e.g. 'Users.objects.all()'
+    def __str__(self):
+        obj_str = f'ID: {self.id}\n' \
+                   f'Username: {self.username}\n' \
+                   f'Email: {self.email}\n' \
+                   f'Password: {self.password}\n' \
+
+        return obj_str
