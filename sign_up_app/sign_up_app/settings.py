@@ -26,7 +26,7 @@ SECRET_KEY = '^1--+r%n$^uhas(dn%&auck^s&!_7c1v!+=1v%(b1&h#5ix9-@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ioc-sign-up-app.herokuapp.com']
 
 
 # Application definition
