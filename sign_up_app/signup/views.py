@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages 
 from signup.models import Users
 
 
@@ -34,10 +35,9 @@ def sign_up(request):
                 missing.append(k)
 
         if missing:
-            feedback = f"Missing fields for {', '.join(missing)}"
-            return render(request, "sign_up.html", {
-                'missing_fields': feedback,
-            })
+            messages.add_message(
+                request, messages.WARNING, f"Missing fields for {', '.join(missing)}")
+            return render(request, "sign_up.html")
 
         new_user = Users(username=details['username'],
                          email=details['email'],
