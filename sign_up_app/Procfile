@@ -1,2 +1,2 @@
 release: python3 manage.py migrate
-web: gunicorn sign_up_app.wsgi
+web: gunicorn sign_up_app/sign_up_app.wsgi
