@@ -1,1 +1,1 @@
-web: gunicorn sign_up_app.wsgi
+web: gunicorn sign_up_app/sign_up_app.wsgi
